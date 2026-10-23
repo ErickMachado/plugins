@@ -2,6 +2,10 @@
 
 All notable changes to this plugin will be documented here.
 
+## 1.0.1
+
+- X Money guide: name people as display name plus handle, for example `minu (minupalaniappan)`, pay the handle from X Money's result instead of asking the user, and never build a handle from a display name.
+
 ## 1.0.0 — initial release
 
 - Added the `x-money` MCP server pointing at X Money's hosted Streamable HTTP endpoint (`https://mcp.money.x.com/mcp`), declared `placement: "server"` because the OAuth grant and tool calls live on the Cursor backend.

@@ -27,6 +27,14 @@ Some actions move real money or create a way to spend it: sending money, request
 
 Ask for balances and transactions freely. Those are read-only.
 
+## Naming people
+
+X Money results name the other person in a payment or request with a display name and an X handle.
+
+- **Show both.** Write the display name, then the handle in parentheses: `minu (minupalaniappan)`. The display name alone can match many accounts.
+- **Pay the handle from the result.** To send money back or request it from someone in a transaction, use the handle X Money returned for that transaction. Do not ask the user for it again.
+- **Never build a handle from a display name.** `minu` is not `@minu`. If a result has no handle, show the display name and ask the user for the handle before any payment.
+
 ## How the connection works
 
 1. The user taps **Connect** on the X Money plugin in Grok Bot.
