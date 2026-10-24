@@ -41,10 +41,10 @@
     "properties": {
       "DATABRICKS_HOST": {
         "type": "string",
-        "title": "Workspace URL",
-        "description": "Your workspace URL or Genie MCP URL. Only the hostname is kept.",
+        "title": "Workspace hostname",
+        "description": "Bare workspace hostname. Leave out https://, any path, and any port.",
         "examples": [
-          "https://dbc-a1b2c3d4-e5f6.cloud.databricks.com"
+          "dbc-a1b2c3d4-e5f6.cloud.databricks.com"
         ]
       },
       "CLIENT_ID": {

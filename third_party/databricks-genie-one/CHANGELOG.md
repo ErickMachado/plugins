@@ -4,7 +4,7 @@ All notable changes to this plugin will be documented here.
 
 ## 1.0.2 — setup form copy
 
-- Plugin variables: `DATABRICKS_HOST` is now titled "Workspace URL" and accepts a workspace URL or Genie MCP URL (only the hostname is kept). Added placeholder examples for `DATABRICKS_HOST`, `CLIENT_ID`, and `CLIENT_SECRET`. Variable keys, types, and required fields are unchanged; `CLIENT_SECRET` stays optional for public clients.
+- Plugin variables: `DATABRICKS_HOST` is titled "Workspace hostname" and takes only the bare hostname (leave out `https://`, any path, and any port). Added placeholder examples for `DATABRICKS_HOST`, `CLIENT_ID`, and `CLIENT_SECRET`. Variable keys, types, and required fields are unchanged; `CLIENT_SECRET` stays optional for public clients.
 
 ## 1.0.1 — Genie icon
 
