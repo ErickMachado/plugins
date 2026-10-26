@@ -19,7 +19,8 @@ Or run `/add-plugin sojo` in chat.
   "mcpServers": {
     "sojo": {
       "type": "http",
-      "url": "https://sojo.gg/mcp"
+      "url": "https://sojo.gg/mcp",
+      "placement": "server"
     }
   }
 }
