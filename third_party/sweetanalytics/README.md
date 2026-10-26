@@ -19,7 +19,8 @@ Or run `/add-plugin sweetanalytics` in chat.
   "mcpServers": {
     "sweetanalytics": {
       "type": "http",
-      "url": "https://mcp.sweetanalytics.com/mcp"
+      "url": "https://mcp.sweetanalytics.com/mcp",
+      "placement": "server"
     }
   }
 }
