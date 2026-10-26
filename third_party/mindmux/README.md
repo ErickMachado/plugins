@@ -19,7 +19,8 @@ Or run `/add-plugin mindmux` in chat.
   "mcpServers": {
     "mindmux": {
       "type": "http",
-      "url": "https://mcp.mindmux.ai/mcp"
+      "url": "https://mcp.mindmux.ai/mcp",
+      "placement": "server"
     }
   }
 }

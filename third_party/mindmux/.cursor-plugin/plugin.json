@@ -2,6 +2,9 @@
   "name": "mindmux",
   "displayName": "MindMux",
   "version": "1.0.0",
+  "minClientVersions": {
+    "cursor": "3.13.0"
+  },
   "description": "Give agents persistent, shared project memory with versioned MindMux Cloud Brain pages.",
   "author": {
     "name": "MindMux"
