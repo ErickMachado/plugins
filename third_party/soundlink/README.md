@@ -8,7 +8,7 @@ Pull music marketing insights like acquisition costs and retention into AI-power
 
 1. Open **Cursor Settings → Plugins**.
 2. Search for **Soundlink**.
-3. Click **Install**, then complete the Soundlink sign-in prompt if one appears.
+3. Click **Install**, then set your Soundlink API key (below).
 
 Or run `/add-plugin soundlink` in chat.
 
@@ -19,15 +19,22 @@ Or run `/add-plugin soundlink` in chat.
   "mcpServers": {
     "soundlink": {
       "type": "http",
-      "url": "https://api.getsoundlink.com/mcp"
+      "url": "https://api.getsoundlink.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${SOUNDLINK_API_KEY}"
+      }
     }
   }
 }
 ```
 
+Auth is a Soundlink **API key** sent as a bearer token (`Authorization: Bearer sk_...`). Create one in Soundlink under **Settings → Developer**, then set it in **Dashboard → Plugins → Configure**.
+
+Soundlink's MCP server does not offer dynamic client registration, so an API key is the supported path for clients like Cursor rather than a browser sign-in.
+
 ## Before you connect
 
-You need a Soundlink account. See Soundlink's [MCP server docs](https://www.getsoundlink.com/docs/mcp-server) for setup details.
+You need a Soundlink account and an API key from **Settings → Developer**. See Soundlink's [MCP server docs](https://www.getsoundlink.com/docs/mcp-server) for setup details.
 
 ## What agents can do
 

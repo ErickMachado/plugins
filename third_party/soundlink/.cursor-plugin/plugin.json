@@ -26,5 +26,18 @@
     "marketing",
     "mcp"
   ],
+  "variables": {
+    "type": "object",
+    "properties": {
+      "SOUNDLINK_API_KEY": {
+        "type": "string",
+        "title": "Soundlink API key",
+        "description": "API key from Soundlink under Settings \u2192 Developer. Sent as Authorization: Bearer."
+      }
+    },
+    "required": [
+      "SOUNDLINK_API_KEY"
+    ]
+  },
   "mcpServers": "./mcp.json"
 }
