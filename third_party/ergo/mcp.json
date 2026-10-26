@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ergo": {
+      "type": "http",
+      "url": "https://api.joinergo.com/api/mcp"
+    }
+  }
+}

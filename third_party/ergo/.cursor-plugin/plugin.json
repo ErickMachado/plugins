@@ -1,0 +1,32 @@
+{
+  "name": "ergo",
+  "displayName": "Ergo",
+  "version": "1.0.0",
+  "description": "Ask Ergo about your pipeline, deals, accounts, and meetings, grounded in your CRM, call transcripts, notes, and email.",
+  "author": {
+    "name": "Ergo",
+    "email": "felipe@joinergo.com"
+  },
+  "homepage": "https://joinergo.com",
+  "repository": "https://github.com/cursor/plugins",
+  "license": "MIT",
+  "logo": "https://cdn.prod.website-files.com/69f072adf2057b95de4c13ea/6a32bf2686fe0e7305f9b69c_ergo%20favicon.png",
+  "keywords": [
+    "ergo",
+    "crm",
+    "sales",
+    "pipeline",
+    "deals",
+    "meetings",
+    "transcripts",
+    "mcp"
+  ],
+  "category": "integrations",
+  "tags": [
+    "ergo",
+    "sales",
+    "crm",
+    "mcp"
+  ],
+  "mcpServers": "./mcp.json"
+}

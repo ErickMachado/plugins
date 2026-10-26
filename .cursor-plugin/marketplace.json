@@ -637,6 +637,11 @@
       "name": "vanta",
       "source": "third_party/vanta",
       "description": "Query and remediate compliance tests, controls, frameworks, risks, and vulnerabilities in Vanta."
+    },
+    {
+      "name": "ergo",
+      "source": "third_party/ergo",
+      "description": "Ask Ergo about your pipeline, deals, accounts, and meetings, grounded in your CRM, call transcripts, notes, and email."
     }
   ]
 }
