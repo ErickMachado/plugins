@@ -19,7 +19,8 @@ Or run `/add-plugin aicut` in chat.
   "mcpServers": {
     "aicut": {
       "type": "http",
-      "url": "https://mcp.aicut.pro/mcp"
+      "url": "https://mcp.aicut.pro/mcp",
+      "placement": "server"
     }
   }
 }
