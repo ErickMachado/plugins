@@ -19,7 +19,8 @@ Or run `/add-plugin louve-invest` in chat.
   "mcpServers": {
     "louve-invest": {
       "type": "http",
-      "url": "https://app.louveinvest.com/mcp"
+      "url": "https://app.louveinvest.com/mcp",
+      "placement": "server"
     }
   }
 }
