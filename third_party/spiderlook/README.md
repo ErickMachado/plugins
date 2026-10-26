@@ -19,7 +19,8 @@ Or run `/add-plugin spiderlook` in chat.
   "mcpServers": {
     "spiderlook": {
       "type": "http",
-      "url": "https://api.spiderlook.com/mcp"
+      "url": "https://api.spiderlook.com/mcp",
+      "placement": "server"
     }
   }
 }
