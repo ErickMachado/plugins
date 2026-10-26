@@ -19,7 +19,8 @@ Or run `/add-plugin testmu-ai` in chat.
   "mcpServers": {
     "testmu-ai": {
       "type": "http",
-      "url": "https://mcp.lambdatest.com/mcp"
+      "url": "https://mcp.lambdatest.com/mcp",
+      "placement": "server"
     }
   }
 }
