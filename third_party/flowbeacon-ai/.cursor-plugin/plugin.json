@@ -27,5 +27,18 @@
     "security",
     "mcp"
   ],
+  "variables": {
+    "type": "object",
+    "properties": {
+      "FLOWBEACON_API_KEY": {
+        "type": "string",
+        "title": "FlowBeacon API key",
+        "description": "API key from https://app.flowbeacon.ai/auth/signin?callbackUrl=%2Fapi-keys."
+      }
+    },
+    "required": [
+      "FLOWBEACON_API_KEY"
+    ]
+  },
   "mcpServers": "./mcp.json"
 }

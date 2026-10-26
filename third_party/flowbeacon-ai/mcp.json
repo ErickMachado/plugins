@@ -2,7 +2,10 @@
   "mcpServers": {
     "flowbeacon-ai": {
       "type": "http",
-      "url": "https://mcp.flowbeacon.ai/mcp"
+      "url": "https://mcp.flowbeacon.ai/mcp",
+      "headers": {
+        "Authorization": "Bearer ${FLOWBEACON_API_KEY}"
+      }
     }
   }
 }
