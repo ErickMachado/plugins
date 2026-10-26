@@ -19,7 +19,8 @@ Or run `/add-plugin rinston` in chat.
   "mcpServers": {
     "rinston": {
       "type": "http",
-      "url": "https://rinston.com/api/agent/mcp"
+      "url": "https://rinston.com/api/agent/mcp",
+      "placement": "server"
     }
   }
 }
