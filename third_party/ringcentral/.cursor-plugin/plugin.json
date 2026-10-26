@@ -1,0 +1,13 @@
+{
+  "name": "ringcentral",
+  "displayName": "RingCentral",
+  "description": "RingEX Phone MCP server for calling, SMS, and voicemail.",
+  "version": "0.0.0",
+  "author": {
+    "name": "RingCentral",
+    "email": "plugin-submission-test@example.com"
+  },
+  "logo": "https://www.ringcentral.com/favicon.ico",
+  "homepage": "https://www.ringcentral.com",
+  "license": "UNLICENSED"
+}
