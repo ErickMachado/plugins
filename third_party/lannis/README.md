@@ -19,7 +19,8 @@ Or run `/add-plugin lannis` in chat.
   "mcpServers": {
     "lannis": {
       "type": "http",
-      "url": "https://mcp.lannis.app/mcp"
+      "url": "https://mcp.lannis.app/mcp",
+      "placement": "server"
     }
   }
 }
