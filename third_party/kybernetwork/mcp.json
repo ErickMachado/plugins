@@ -5,7 +5,13 @@
       "command": "npx",
       "args": [
         "-y",
-        "github:KyberNetwork/kyberswap-mcp"
+        "--package",
+        "tsx@4",
+        "--package",
+        "github:KyberNetwork/kyberswap-mcp",
+        "node",
+        "-e",
+        "const {spawn}=require('node:child_process');const path=require('node:path');const fs=require('node:fs');const suffix=path.join('node_modules','.bin');const root=(process.env.PATH||'').split(path.delimiter).filter((entry)=>entry.endsWith(suffix)).map((entry)=>path.resolve(entry,'..')).find((dir)=>fs.existsSync(path.join(dir,'kyberswap-mcp-server','src','index.ts')));if(!root){console.error('kyberswap-mcp-server source was not installed');process.exit(1);}const entry=path.join(root,'kyberswap-mcp-server','src','index.ts');const child=spawn(process.execPath,['--import','tsx',entry],{cwd:path.resolve(root,'..'),stdio:'inherit'});child.on('error',(error)=>{console.error(error);process.exit(1);});for(const signal of ['SIGINT','SIGTERM','SIGHUP']){process.on(signal,()=>{try{child.kill(signal);}catch{}});}child.on('exit',(code)=>process.exit(code??0));"
       ]
     }
   }
