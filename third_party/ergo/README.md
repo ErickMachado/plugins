@@ -19,7 +19,8 @@ Or run `/add-plugin ergo` in chat.
   "mcpServers": {
     "ergo": {
       "type": "http",
-      "url": "https://api.joinergo.com/api/mcp"
+      "url": "https://api.joinergo.com/api/mcp",
+      "placement": "server"
     }
   }
 }
