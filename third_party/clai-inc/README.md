@@ -19,7 +19,8 @@ Or run `/add-plugin clai-inc` in chat.
   "mcpServers": {
     "clai-inc": {
       "type": "http",
-      "url": "https://app.goclai.com/mcp"
+      "url": "https://app.goclai.com/mcp",
+      "placement": "server"
     }
   }
 }
