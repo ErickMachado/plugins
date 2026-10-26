@@ -19,7 +19,8 @@ Or run `/add-plugin appfollow` in chat.
   "mcpServers": {
     "appfollow": {
       "type": "http",
-      "url": "https://mcp.appfollow.io/mcp"
+      "url": "https://mcp.appfollow.io/mcp",
+      "placement": "server"
     }
   }
 }

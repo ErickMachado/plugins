@@ -641,7 +641,7 @@
     {
       "name": "appfollow",
       "source": "third_party/appfollow",
-      "description": "Analyze App Store and Google Play reviews, ratings, and ASO, and audit competitors."
+      "description": "Analyze App Store and Google Play reviews, ratings and ASO from your AppFollow account: feedback reports, keyword and metadata suggestions, and competitor audits. Connects via MCP."
     }
   ]
 }
