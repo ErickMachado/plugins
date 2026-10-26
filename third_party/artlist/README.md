@@ -19,7 +19,8 @@ Or run `/add-plugin artlist` in chat.
   "mcpServers": {
     "artlist": {
       "type": "http",
-      "url": "https://mcp.artlist.io/mcp"
+      "url": "https://mcp.artlist.io/mcp",
+      "placement": "server"
     }
   }
 }
