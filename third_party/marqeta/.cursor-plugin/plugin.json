@@ -27,5 +27,30 @@
     "payments",
     "mcp"
   ],
+  "variables": {
+    "type": "object",
+    "properties": {
+      "MARQETA_API_URL": {
+        "type": "string",
+        "title": "Marqeta API URL",
+        "description": "Base URL for the Marqeta Core API, for example sandbox-api.marqeta.com."
+      },
+      "MARQETA_USERNAME": {
+        "type": "string",
+        "title": "Marqeta application token",
+        "description": "Application token from app.marqeta.com/development. Sent as the HTTP Basic username."
+      },
+      "MARQETA_PASSWORD": {
+        "type": "string",
+        "title": "Marqeta admin access token",
+        "description": "Admin access token from app.marqeta.com/development. Sent as the HTTP Basic password."
+      }
+    },
+    "required": [
+      "MARQETA_API_URL",
+      "MARQETA_USERNAME",
+      "MARQETA_PASSWORD"
+    ]
+  },
   "mcpServers": "./mcp.json"
 }
