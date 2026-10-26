@@ -1,6 +1,6 @@
 ---
 name: headless-step-refine
-description: "Step 2 (refine) of the Hostinger Headless flow. Turns the user's seed — often just a domain — into a brief through conversation: asks what they want to build (purpose, audience, tone, pages, products, must-haves; images, local files, links all welcome), then *infers* the backend that fits (WordPress, Ecommerce, WordPress + Ecommerce, WordPress + WooCommerce for a one-site content+store, or Webapp for a custom app/SPA) — it never asks the user to pick a backend or a technology; the user confirms the plan in plain language, then it writes brief.md. Hostinger Ecommerce stays the default for selling; WooCommerce is chosen only when the user explicitly asks for it or wants content and a store on one WordPress site."
+description: "Step 2 (refine) of the Hostinger Headless flow. Turns the user's seed — often just a domain — into a brief through conversation: asks what they want to build (purpose, audience, tone, pages, products, must-haves; images, local files, links all welcome), then *infers* the backend that fits (WordPress, Ecommerce, WordPress + WooCommerce for selling plus ongoing content on one site, or Webapp for a custom app/SPA) — it never asks the user to pick a backend or a technology; the user confirms the plan in plain language, then it writes brief.md. Ecommerce stays the default for a shop with no ongoing editorial content. Never write WordPress + Ecommerce; provision cannot set that pairing up as one site."
 ---
 
 # headless-step-refine
@@ -20,8 +20,9 @@ top-level `SKILL.md`.
 > multiple-choice UI. Open with **"What do you want to build?"** and infer the backend yourself in
 > Step 4 from what they describe (and whether they sell). The backend is a technical decision the flow
 > makes *for* the user — they confirm the **plan** (what the site is and does), not the plumbing. The
-> only exception is when the user *volunteers* a backend ("build it on WordPress", "use WooCommerce"):
-> then honour their choice and note it in the brief.
+> only exception is when the user *volunteers* a supported backend ("build it on WordPress", "use WooCommerce"):
+> then honour their choice and note it in the brief. **WordPress + Ecommerce** is not one of those —
+> provision cannot build it as one site, so do not write it (Step 4).
 
 **In:** the domain (the workspace directory name), plus anything the user already shared.
 **Out:** `~/.hostinger/<domain>/brief.md`.
@@ -154,27 +155,26 @@ a question put back to the user. Pick the backend that fits what the user told y
 |---|---|---|
 | **WordPress** | No selling. The owner publishes and edits content: pages, blog, articles, portfolio. | Headless WordPress at `/cms` — write and edit content in wp-admin. |
 | **Ecommerce** | Selling is the point, and the rest is a few static pages (About, Contact, FAQ, policies). No ongoing blog. | Hostinger Ecommerce store — products, collections, checkout, payments, shipping, orders. |
-| **WordPress + Ecommerce** | Selling **and** regular editorial content (a blog, guides, lookbooks, recipes) the owner keeps adding to, run as **two** backends (WordPress site + separate Hostinger Ecommerce store). | Both: WordPress for content, the Ecommerce store for products and checkout. |
-| **WordPress + WooCommerce** | **Only** when the user explicitly names WooCommerce, or explicitly wants content **and** a store on **one** WordPress site (one admin, one domain). The one-site alternative to WordPress + Ecommerce. | A single headless WordPress at `/cms` with the WooCommerce plugin — products, cart, coupons and checkout (Cash on Delivery) over the WooCommerce Store API, plus WP posts/pages on the same site. |
+| **WordPress + WooCommerce** | Selling **and** content the owner keeps publishing (a blog, guides, lookbooks, recipes) on **one** site. Also when the user explicitly names WooCommerce. | A single headless WordPress at `/cms` with the WooCommerce plugin — products, cart, coupons and checkout (Cash on Delivery) over the WooCommerce Store API, plus WP posts/pages on the same site. |
 | **Webapp** | A custom **app, SPA or web application** that brings its own code and data — a dashboard, tool, calculator, booking app, a project the user is deploying — **not** a content site or a store. No CMS and no store engine. | A plain Node.js app host (an empty website, no `/cms`), with a MySQL database when the app needs one. The app owns all its routes and data. |
 
 Rules of thumb:
 
 - **Is it an app, or a site?** A custom application the user builds/brings (its own logic, its own data,
-  maybe a database) → **Webapp**. A content site or a shop → one of the three above. When the user says
+  maybe a database) → **Webapp**. A content site or a shop → WordPress, Ecommerce, or
+  WordPress + WooCommerce. When the user says
   "my app / SPA / dashboard / tool", or hands you an existing app project to deploy, that's **Webapp**.
-- **Selling decides first (for sites).** No selling → WordPress. Selling → Ecommerce or
-  WordPress + Ecommerce.
-- **Then the content.** Selling plus only a few fixed pages → Ecommerce. Selling plus content the
-  owner will keep publishing → WordPress + Ecommerce.
-- **Hostinger Ecommerce is the default for selling — WooCommerce is never the default and is never
-  recommended on its own.** Choose **WordPress + WooCommerce** only when the user explicitly names
-  WooCommerce, or explicitly wants content **and** a store on one WordPress site (one admin, one
-  domain — the one-site alternative to WordPress + Ecommerce). For every other selling case, keep
-  Hostinger Ecommerce. If the user wants both content and a store but hasn't said "one site" or
-  "WooCommerce", offer it as an option — don't switch to it silently.
-- **Don't add WordPress "just in case".** A second backend is a second admin to learn. Recommend the
-  combination only when the user described ongoing content.
+- **Selling decides first (for sites).** No selling → WordPress. Selling, and the rest is a few fixed
+  pages → Ecommerce. Selling plus content the owner will keep publishing → **WordPress + WooCommerce**
+  (one admin, one domain). That is the supported one-site backend for a store plus ongoing content.
+- **Never choose WordPress + Ecommerce.** A WordPress site plus a separate Hostinger Ecommerce store
+  has no combined setup. Provision stops on a brief that names it. Do not write
+  `**WordPress + Ecommerce**` into `brief.md`, and do not offer it as the plan. If the user asks for
+  those two products, say that pairing is not supported as one site and confirm WordPress + WooCommerce,
+  or a single backend (WordPress or Ecommerce), before you write the brief.
+- **Ecommerce stays the default for a shop with no ongoing editorial content.** Use WordPress +
+  WooCommerce for selling plus content they keep publishing, or when they explicitly name WooCommerce.
+  Do not recommend WooCommerce for a catalog and a few static pages.
 - Selling a single service by enquiry (no checkout, no cart) is **not** commerce → WordPress with a
   contact page.
 - **Webapp never uses WordPress or a store.** If the user wants a custom app *and* a CMS/shop, that's two
@@ -202,8 +202,8 @@ site, not the backend:
 
 End with *"Good to go, or anything to change?"* A yes (or "go") → write `brief.md`. A skipped tool
 result is not a yes (see *When you ask the user* in the top-level `SKILL.md`). Changes → apply them
-and write it; don't loop back into questions. If the user *volunteers* a different backend, use
-theirs and note it in the brief.
+and write it; don't loop back into questions. If the user *volunteers* a different supported
+backend, use theirs and note it in the brief. Do not write **WordPress + Ecommerce** (Step 4).
 
 ## Step 6 — Write `brief.md` and hand off
 
@@ -213,8 +213,9 @@ user's own words where you can. Then update `state.json`:
 `"stage": "provision"`, fresh `updated_at`.
 
 The **Suggested backend** section is the contract with `03-provision/SKILL.md`, which routes on it.
-Its first line must be exactly one of `**WordPress**`, `**Ecommerce**`, `**WordPress + Ecommerce**`,
+Its first line must be exactly one of `**WordPress**`, `**Ecommerce**`,
 `**WordPress + WooCommerce**` or `**Webapp**`, followed by an em dash and the one-line reason.
+Never `**WordPress + Ecommerce**` — provision has no combined setup for that pairing and stops.
 `**WordPress + WooCommerce**` is the WordPress backend with the WooCommerce store turned on — provision
 routes it to the `wordpress` subfolder with the store enabled (it is **not** a separate backend).
 
@@ -262,7 +263,7 @@ on both.>
 <logo, colours, photos, copy the user provided and where they are; "None yet" if none>
 
 ## Suggested backend
-**<WordPress | Ecommerce | WordPress + Ecommerce | WordPress + WooCommerce | Webapp>** — <one-line reason>.
+**<WordPress | Ecommerce | WordPress + WooCommerce | Webapp>** — <one-line reason>.
 <"Confirmed by the user." or "User chose this over the recommended <X> because <reason>.">
 
 ## Build mode
@@ -279,13 +280,13 @@ a requirement); **WordPress may be SSG (Astro)** when the site is mostly static 
 otherwise **SSR**. Default when unsure: **Next.js SSR**.
 ```
 
-## Example — WordPress + Ecommerce
+## Example — WordPress + WooCommerce
 
 > A ceramicist sells around 30 handmade pieces and writes a monthly studio journal.
 
 ```markdown
 ## Suggested backend
-**WordPress + Ecommerce** — sells ~30 products with checkout, and the owner publishes a monthly
-studio journal they want to edit themselves.
+**WordPress + WooCommerce** — sells ~30 products with checkout, and the owner publishes a monthly
+studio journal they want to edit on the same site.
 Confirmed by the user.
 ```

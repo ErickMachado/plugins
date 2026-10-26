@@ -43,11 +43,13 @@ function checkMcp() {
 }
 
 // ── 2. Existing auth? ────────────────────────────────────────────────────────
-// An env token always wins (the MCP bypasses OAuth entirely when it is set).
-// Otherwise stored OAuth credentials mean a previous sign-in can be reused —
-// the MCP refreshes expired tokens automatically on the first tool call.
+// HOSTINGER_API_TOKEN is the only env override (the MCP bypasses OAuth when
+// it is set). A generic API_TOKEN is often an unrelated CI or app secret and
+// must not count as a Hostinger login. Otherwise stored OAuth credentials
+// mean a previous sign-in can be reused — the MCP refreshes expired tokens
+// automatically on the first tool call.
 function existingAuth() {
-  if (process.env.HOSTINGER_API_TOKEN || process.env.API_TOKEN) {
+  if (process.env.HOSTINGER_API_TOKEN) {
     return 'api_token';
   }
   const base = isWin ? (process.env.APPDATA || os.homedir()) : path.join(os.homedir(), '.config');

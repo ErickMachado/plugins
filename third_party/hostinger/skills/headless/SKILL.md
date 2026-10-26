@@ -50,7 +50,7 @@ The order is sequencial run and check the whole headless flow:
 
 | # | Stage                                                                                                              | Skill / source                                                        | Writes | Instance? |
 |---|--------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|---|---|
-| — | **connect** — connect the Hostinger connector, auth, get active plan                                               | `connect/SKILL.md` → `connect/tools/<tool>.md` | `connect.json` | no |
+| — | **connect** — confirm the plugin's hosted Hostinger MCP (OAuth). Other tools: bundled bootstrap, then their tool file | `connect/SKILL.md` | `connect.json` | no |
 | 1 | **check state** — where does this domain stand? resume / switch / start over                                       | `steps/01-check-state/SKILL.md`                                       | `state.json` | no |
 | 2 | **refine** — discover what the user wants, in conversation                                                         | `steps/02-refine/SKILL.md`                                            | `brief.md` | no |
 | 3 | **provision** — choose the backend from the brief, then provision it                                               | `steps/03-provision/<backend>/SKILL.md`                               | `site.json` | **bg** — fire, then poll in the background |
@@ -61,13 +61,17 @@ The order is sequencial run and check the whole headless flow:
 | 8 | **deploy** — upload source, trigger the build                                                                      | `steps/08-deploy/SKILL.md`                                            | `deploy.json` | **yes** |
 | 9 | **done** — hand over URLs, dashboard, summary, next steps (the **final report**)                                   | `steps/09-done/SKILL.md`                                              | — | no |
 
-**The most important is that connect stage runs first and always**
-It's fetched from the public URL and runs *before* the Hostinger MCP Server
-is loaded, the main goal of this is to have the Hostinger MCP Server.
+**The most important is that connect stage runs first and always.**
+The Hostinger plugin already registers the hosted MCP server
+(`https://mcp.hostinger.com`, name `hostinger`). Cursor and Grok sign in with
+OAuth on first use. Connect only confirms that session. It does not fetch a
+connector from a public URL, download `bootstrap.mjs`, or start
+`@hostinger/mcp` over stdio, and it does not write another `hostinger` server
+into MCP config — that name is the plugin server, and a local stdio entry
+would shadow it and use a different credential store.
 
-You can find those connect skills under `connect/`.
-The main skill lives in `connect/SKILL.md`.
-There are also specific tools under `connect/tools/`.
+You can find the connect skill under `connect/SKILL.md`. Tool files under
+`connect/tools/` are only for coding tools that do not have this plugin.
 
 The other 9 numbered steps live under `steps/` and are read from the installed skill folder (this will be guided in connect step).
 

@@ -19,7 +19,8 @@ Or run `/add-plugin hostinger` in chat.
   "mcpServers": {
     "hostinger": {
       "type": "http",
-      "url": "https://mcp.hostinger.com"
+      "url": "https://mcp.hostinger.com",
+      "placement": "server"
     }
   }
 }
