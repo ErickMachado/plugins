@@ -2,7 +2,10 @@
   "mcpServers": {
     "okara": {
       "type": "http",
-      "url": "https://okara.ai/api/mcp"
+      "url": "https://okara.ai/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${OKARA_MCP_API_KEY}"
+      }
     }
   }
 }

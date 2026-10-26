@@ -8,7 +8,7 @@ Read your marketing workspace (strategy, SEO and AI-search audits, Search Consol
 
 1. Open **Cursor Settings → Plugins**.
 2. Search for **Okara**.
-3. Click **Install**, then complete the Okara connection prompt.
+3. Click **Install**, then set your Okara MCP API key (below).
 
 Or run `/add-plugin okara` in chat.
 
@@ -19,17 +19,16 @@ Or run `/add-plugin okara` in chat.
   "mcpServers": {
     "okara": {
       "type": "http",
-      "url": "https://okara.ai/api/mcp"
+      "url": "https://okara.ai/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${OKARA_MCP_API_KEY}"
+      }
     }
   }
 }
 ```
 
-If your client asks for credentials, add an Okara MCP API key from your Okara workspace as a request header:
-
-```json
-"headers": { "Authorization": "Bearer <your-okara-mcp-key>" }
-```
+Auth is an Okara **MCP API key** sent as a bearer token. Create one in your Okara workspace, then set it in **Dashboard → Plugins → Configure**.
 
 ## Before you connect
 

@@ -28,5 +28,18 @@
     "seo",
     "mcp"
   ],
+  "variables": {
+    "type": "object",
+    "properties": {
+      "OKARA_MCP_API_KEY": {
+        "type": "string",
+        "title": "Okara MCP API key",
+        "description": "MCP API key from your Okara workspace."
+      }
+    },
+    "required": [
+      "OKARA_MCP_API_KEY"
+    ]
+  },
   "mcpServers": "./mcp.json"
 }
