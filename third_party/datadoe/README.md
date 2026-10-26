@@ -19,7 +19,8 @@ Or run `/add-plugin datadoe` in chat.
   "mcpServers": {
     "datadoe": {
       "type": "http",
-      "url": "https://mcp.datadoe.com/mcp/v1"
+      "url": "https://mcp.datadoe.com/mcp/v1",
+      "placement": "server"
     }
   }
 }
