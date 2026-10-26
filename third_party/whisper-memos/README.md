@@ -20,7 +20,8 @@ Or run `/add-plugin whisper-memos` in chat.
   "mcpServers": {
     "whisper-memos": {
       "type": "http",
-      "url": "https://whispermemos.com/mcp"
+      "url": "https://whispermemos.com/mcp",
+      "placement": "server"
     }
   }
 }

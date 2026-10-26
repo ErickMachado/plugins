@@ -2,6 +2,9 @@
   "name": "whisper-memos",
   "displayName": "Whisper Memos",
   "version": "1.0.0",
+  "minClientVersions": {
+    "cursor": "3.13.0"
+  },
   "description": "Read, summarize and act on the voice memos you record with Whisper Memos.",
   "author": {
     "name": "Median Tech, s.r.o.",
