@@ -19,7 +19,8 @@ Or run `/add-plugin librepass` in chat.
   "mcpServers": {
     "librepass": {
       "type": "http",
-      "url": "https://librepass.co/mcp/"
+      "url": "https://librepass.co/mcp/",
+      "placement": "server"
     }
   }
 }
