@@ -19,7 +19,8 @@ Or run `/add-plugin embarko` in chat.
   "mcpServers": {
     "embarko": {
       "type": "http",
-      "url": "https://mcp.embarko.ai/mcp"
+      "url": "https://mcp.embarko.ai/mcp",
+      "placement": "server"
     }
   }
 }
