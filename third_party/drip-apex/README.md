@@ -19,7 +19,8 @@ Or run `/add-plugin drip-apex` in chat.
   "mcpServers": {
     "drip-apex": {
       "type": "http",
-      "url": "https://app.drip-apex.com/api/mcp"
+      "url": "https://app.drip-apex.com/api/mcp",
+      "placement": "server"
     }
   }
 }
