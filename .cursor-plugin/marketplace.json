@@ -641,7 +641,7 @@
     {
       "name": "bitrefill",
       "source": "third_party/bitrefill",
-      "description": "Browse and buy gift cards, mobile top-ups, and eSIMs from 1,500+ brands in 180+ countries."
+      "description": "Browse and buy gift cards, mobile top-ups and eSIMs from 1,500+ brands in 180+ countries. Pay by card, crypto or Bitrefill balance. Purchases confirm with you before paying."
     }
   ]
 }

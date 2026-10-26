@@ -4,7 +4,7 @@
 
 The Bitrefill plugin's connector signs in with the user's own Bitrefill account. Route silently:
 
-1. **Connected** (`get-balances` available, even namespaced or behind the host's MCP tool) → [../touchpoints/mcp.md](../touchpoints/mcp.md).
+1. **Connected** (`search-products` available, even namespaced or behind the host's MCP tool) → [../touchpoints/mcp.md](../touchpoints/mcp.md).
 2. **Not connected** → shop as a guest with the CLI ([../touchpoints/cli.md](../touchpoints/cli.md) § Guest checkout) and offer "Connect your Bitrefill account" first in the confirm. If picked, use the host's sign-in for the Bitrefill connector so the app shows its connect card; no card → Grok Bot: **Connect apps**, Cursor: **Customize** → Bitrefill → **Authenticate** (CLI: `agent mcp login <id>`, id from `agent mcp list`). Never ask for a password in chat. Guest `purchase_limit_reached` → offer the connect again.
 3. **No connector and no shell**, or the method is rejected → send the `https://www.bitrefill.com` product link.
 
