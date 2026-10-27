@@ -656,7 +656,7 @@
     {
       "name": "roxane-inc",
       "source": "third_party/roxane-inc",
-      "description": "Read and post PrivOS room messages and manage tasks, lists, items, agents, and rooms through the privos CLI."
+      "description": "Connect to your PrivOS workspace through the official privos CLI. Read and post room messages, manage tasks, lists, items, agents, and rooms, with every write shown as a dry run until you confirm it."
     }
   ]
 }

@@ -120,7 +120,7 @@ Official Cursor plugins for popular developer tools, frameworks, and SaaS produc
 | `ringcentral-phone` | [RingCentral Phone](third_party/ringcentral-phone/) | Cursor | Integrations | Read call activity, AI call notes, SMS, voicemail, and fax, and send SMS. |
 | `ringcentral-chat` | [RingCentral Chat](third_party/ringcentral-chat/) | Cursor | Integrations | Read team chats and posts, send messages, and manage teams, tasks, and notes. |
 | `servicenow` | [ServiceNow](third_party/servicenow/) | Cursor | Integrations | Call the tools your admin publishes on a ServiceNow instance. |
-| `roxane-inc` | [PrivOS](third_party/roxane-inc/) | Roxane, Inc. | Integrations | Read and post PrivOS room messages and manage tasks, lists, items, agents, and rooms through the privos CLI. |
+| `roxane-inc` | [PrivOS](third_party/roxane-inc/) | Roxane, Inc. | Integrations | Connect to your PrivOS workspace through the official privos CLI. Read and post room messages, manage tasks, lists, items, agents, and rooms, with every write shown as a dry run until you confirm it. |
 Author values match each plugin’s `plugin.json` `author.name` (Cursor lists `plugins@cursor.com` in the manifest).
 
 ## Repository structure
