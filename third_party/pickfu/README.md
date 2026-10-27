@@ -19,7 +19,8 @@ Or run `/add-plugin pickfu` in chat.
   "mcpServers": {
     "pickfu": {
       "type": "http",
-      "url": "https://mcp.pickfu.com/mcp"
+      "url": "https://mcp.pickfu.com/mcp",
+      "placement": "server"
     }
   }
 }
