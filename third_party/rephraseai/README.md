@@ -19,7 +19,8 @@ Or run `/add-plugin rephraseai` in chat.
   "mcpServers": {
     "rephraseai": {
       "type": "http",
-      "url": "https://www.rephraseai.com/cursor/mcp"
+      "url": "https://www.rephraseai.com/cursor/mcp",
+      "placement": "server"
     }
   }
 }
