@@ -2,6 +2,9 @@
   "name": "larridin",
   "displayName": "Larridin Work Context",
   "version": "1.0.0",
+  "minClientVersions": {
+    "cursor": "3.13.0"
+  },
   "description": "Read your recent projects, collaborators, meetings, and blockers from Larridin Work Context.",
   "author": {
     "name": "Cursor",
