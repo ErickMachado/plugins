@@ -656,7 +656,7 @@
     {
       "name": "twelvedata",
       "source": "third_party/twelvedata",
-      "description": "Get quotes, price history, technical indicators, and fundamentals for stocks, forex, and crypto."
+      "description": "Real-time and historical market data from Twelve Data: stocks, forex, crypto, ETFs and mutual funds. Quotes and price history, 60+ technical indicators, fundamentals, earnings, dividends, market movers and symbol search."
     }
   ]
 }
