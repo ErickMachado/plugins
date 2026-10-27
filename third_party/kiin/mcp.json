@@ -2,7 +2,8 @@
   "mcpServers": {
     "kiin": {
       "type": "http",
-      "url": "https://mcp.kiin.co"
+      "url": "https://mcp.kiin.co",
+      "placement": "server"
     }
   }
 }

@@ -19,7 +19,8 @@ Or run `/add-plugin kiin` in chat.
   "mcpServers": {
     "kiin": {
       "type": "http",
-      "url": "https://mcp.kiin.co"
+      "url": "https://mcp.kiin.co",
+      "placement": "server"
     }
   }
 }
