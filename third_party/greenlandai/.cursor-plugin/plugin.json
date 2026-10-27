@@ -27,5 +27,18 @@
     "supply chain",
     "mcp"
   ],
+  "variables": {
+    "type": "object",
+    "properties": {
+      "GREENLANDAI_API_KEY": {
+        "type": "string",
+        "title": "Greenland AI API key",
+        "description": "API key from your Greenland AI account (starts with gai_). Tool calls send it as the X-API-Key header."
+      }
+    },
+    "required": [
+      "GREENLANDAI_API_KEY"
+    ]
+  },
   "mcpServers": "./mcp.json"
 }

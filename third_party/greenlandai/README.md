@@ -8,7 +8,7 @@ The physical world as queryable data: companies, resource deposits, infrastructu
 
 1. Open **Cursor Settings → Plugins**.
 2. Search for **Greenland AI**.
-3. Click **Install**.
+3. Click **Install**, then set your Greenland AI API key.
 
 Or run `/add-plugin greenlandai` in chat.
 
@@ -19,13 +19,16 @@ Or run `/add-plugin greenlandai` in chat.
   "mcpServers": {
     "greenlandai": {
       "type": "http",
-      "url": "https://mcp.greenlandai.ai/mcp"
+      "url": "https://mcp.greenlandai.ai/mcp",
+      "headers": {
+        "X-API-Key": "${GREENLANDAI_API_KEY}"
+      }
     }
   }
 }
 ```
 
-Connecting and listing tools needs no key. Tool calls need a Greenland AI API key sent as the `X-API-Key` header; without one, calls return a 401 message explaining how to get a key.
+Tool calls send a Greenland AI API key as the `X-API-Key` header (`${GREENLANDAI_API_KEY}`). Set the key in **Dashboard → Plugins → Configure**. Without one, calls return a 401 message explaining how to get a key.
 
 ## Before you connect
 

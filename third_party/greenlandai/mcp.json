@@ -2,7 +2,10 @@
   "mcpServers": {
     "greenlandai": {
       "type": "http",
-      "url": "https://mcp.greenlandai.ai/mcp"
+      "url": "https://mcp.greenlandai.ai/mcp",
+      "headers": {
+        "X-API-Key": "${GREENLANDAI_API_KEY}"
+      }
     }
   }
 }
