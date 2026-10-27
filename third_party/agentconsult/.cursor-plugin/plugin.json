@@ -2,6 +2,9 @@
   "name": "agentconsult",
   "displayName": "BuyBox",
   "version": "1.0.0",
+  "minClientVersions": {
+    "cursor": "3.13.0"
+  },
   "description": "Save buying criteria for homes, cars, or anything else, and score and rank listings against your budget, must-haves, and dealbreakers.",
   "author": {
     "name": "Agentic Consulting LLC",

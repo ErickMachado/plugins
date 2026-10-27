@@ -19,7 +19,8 @@ Or run `/add-plugin agentconsult` in chat.
   "mcpServers": {
     "agentconsult": {
       "type": "http",
-      "url": "https://buybox.agentconsult.ai/mcp"
+      "url": "https://buybox.agentconsult.ai/mcp",
+      "placement": "server"
     }
   }
 }
