@@ -2,7 +2,7 @@
   "name": "sellerpro-international-business-technol",
   "displayName": "SellerPro 360",
   "version": "1.0.0",
-  "description": "Automate Amazon review requests and work with SellerPro 360 seller tools.",
+  "description": "Search the SellerPro 360 Amazon seller forum and list supported Amazon marketplaces.",
   "author": {
     "name": "SELLERPRO INTERNATIONAL BUSINESS TECHNOLOGY HOLDINGS LIMITED",
     "email": "hello@sellerpro360.com"
@@ -15,7 +15,8 @@
     "sellerpro360",
     "amazon",
     "seller central",
-    "review requests",
+    "amazon marketplaces",
+    "seller forum",
     "ecommerce",
     "mcp"
   ],

@@ -656,7 +656,7 @@
     {
       "name": "sellerpro-international-business-technol",
       "source": "third_party/sellerpro-international-business-technol",
-      "description": "Automate Amazon review requests and work with SellerPro 360 seller tools."
+      "description": "Search the SellerPro 360 Amazon seller forum and list supported Amazon marketplaces."
     }
   ]
 }
