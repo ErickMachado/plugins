@@ -19,7 +19,8 @@ Or run `/add-plugin ttmi` in chat.
   "mcpServers": {
     "ttmi": {
       "type": "http",
-      "url": "https://ttmi.ai/mcp"
+      "url": "https://ttmi.ai/mcp",
+      "placement": "server"
     }
   }
 }
