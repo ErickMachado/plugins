@@ -19,7 +19,7 @@ Or run `/add-plugin bookipi` in chat.
   "mcpServers": {
     "bookipi": {
       "type": "http",
-      "url": "http://mcp.bkpi.co/mcp"
+      "url": "https://mcp.bookipi.com/mcp"
     }
   }
 }
@@ -48,7 +48,7 @@ The hosted runtime is the source of truth for tool names and schemas.
 ## Docs
 
 - Bookipi: https://bookipi.com
-- Server URL: http://mcp.bkpi.co/mcp
+- Server URL: https://mcp.bookipi.com/mcp
 
 Logo is Bookipi's logotype, downloaded from the URL Bookipi provided with the submission.
 
