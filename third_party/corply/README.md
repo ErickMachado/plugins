@@ -19,7 +19,8 @@ Or run `/add-plugin corply` in chat.
   "mcpServers": {
     "corply": {
       "type": "http",
-      "url": "https://corply.dev/mcp"
+      "url": "https://corply.dev/mcp",
+      "placement": "server"
     }
   }
 }
