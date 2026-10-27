@@ -1,0 +1,28 @@
+{
+  "name": "rephraseai",
+  "displayName": "Rephrase AI",
+  "version": "1.0.0",
+  "description": "Turn a rough draft into what you meant to say without leaving Grok Bot or Cursor. Rephrase AI rewrites your text in the voice you pick, keeps your meaning, and saves every rewrite to your Rephrase AI History.",
+  "author": {
+    "name": "Cursor",
+    "email": "plugins@cursor.com"
+  },
+  "homepage": "https://www.rephraseai.com/",
+  "repository": "https://github.com/cursor/plugins",
+  "license": "MIT",
+  "logo": "https://www.rephraseai.com/icon0.svg",
+  "keywords": [
+    "rephrase",
+    "rewrite",
+    "writing",
+    "tone",
+    "mcp"
+  ],
+  "category": "integrations",
+  "tags": [
+    "rephraseai",
+    "writing",
+    "mcp"
+  ],
+  "mcpServers": "./mcp.json"
+}

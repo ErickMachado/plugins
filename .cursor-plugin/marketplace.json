@@ -647,6 +647,11 @@
       "name": "ringcentral-chat",
       "source": "third_party/ringcentral-chat",
       "description": "Read team chats and posts, send messages, and manage teams, tasks, and notes."
+    },
+    {
+      "name": "rephraseai",
+      "source": "third_party/rephraseai",
+      "description": "Turn a rough draft into what you meant to say without leaving Grok Bot or Cursor. Rephrase AI rewrites your text in the voice you pick, keeps your meaning, and saves every rewrite to your Rephrase AI History."
     }
   ]
 }
