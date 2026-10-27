@@ -26,5 +26,18 @@
     "media",
     "mcp"
   ],
+  "variables": {
+    "type": "object",
+    "properties": {
+      "LEVEA_API_KEY": {
+        "type": "string",
+        "title": "Levea API key",
+        "description": "API key from https://livecore.ai. Sent as Authorization: Bearer. Video edits require it."
+      }
+    },
+    "required": [
+      "LEVEA_API_KEY"
+    ]
+  },
   "mcpServers": "./mcp.json"
 }

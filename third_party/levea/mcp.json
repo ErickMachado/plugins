@@ -2,7 +2,11 @@
   "mcpServers": {
     "levea": {
       "type": "http",
-      "url": "https://api.livecore.ai/api/v1/misc/mcp"
+      "url": "https://api.livecore.ai/api/v1/misc/mcp",
+      "headers": {
+        "Authorization": "Bearer ${LEVEA_API_KEY}"
+      },
+      "placement": "server"
     }
   }
 }

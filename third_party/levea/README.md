@@ -8,7 +8,7 @@ Edit videos from plain-language prompts: clips, captions, reframing, voiceover, 
 
 1. Open **Cursor Settings → Plugins**.
 2. Search for **Levea**.
-3. Click **Install**, then complete the Levea sign-in prompt.
+3. Click **Install**, then set your Levea API key (below).
 
 Or run `/add-plugin levea` in chat.
 
@@ -19,17 +19,21 @@ Or run `/add-plugin levea` in chat.
   "mcpServers": {
     "levea": {
       "type": "http",
-      "url": "https://api.livecore.ai/api/v1/misc/mcp"
+      "url": "https://api.livecore.ai/api/v1/misc/mcp",
+      "headers": {
+        "Authorization": "Bearer ${LEVEA_API_KEY}"
+      },
+      "placement": "server"
     }
   }
 }
 ```
 
-Auth is OAuth 2.1. Cursor opens a Levea sign-in page at livecore.ai when the plugin connects; there is no API key to configure.
+Auth is a Levea **API key** sent as `Authorization: Bearer`. Generate one at https://livecore.ai, then set it in **Dashboard → Plugins → Configure**. Do not commit the key. Listing tools works without a key; video edits require it.
 
 ## Before you connect
 
-You need a Levea account. New accounts are created on first sign-in.
+You need a Levea account and an API key from https://livecore.ai.
 
 ## What agents can do
 
