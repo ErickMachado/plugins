@@ -19,7 +19,7 @@ Or run `/add-plugin flora` in chat.
   "mcpServers": {
     "flora": {
       "type": "http",
-      "url": "https://agents.flora.ai/mcp/cursor"
+      "url": "https://agents.flora.ai/mcp"
     }
   }
 }
@@ -46,7 +46,7 @@ The hosted runtime is the source of truth for tool names and schemas.
 
 - FLORA: https://flora.ai
 - MCP docs: https://docs.flora.ai/mcp
-- Server URL: https://agents.flora.ai/mcp/cursor
+- Server URL: https://agents.flora.ai/mcp
 
 Logo is FLORA's icon from https://github.com/florafauna-ai/flora-mcp-skills, resized to 256×256.
 

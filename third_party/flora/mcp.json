@@ -2,7 +2,7 @@
   "mcpServers": {
     "flora": {
       "type": "http",
-      "url": "https://agents.flora.ai/mcp/cursor"
+      "url": "https://agents.flora.ai/mcp"
     }
   }
 }
