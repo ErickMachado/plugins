@@ -2,7 +2,8 @@
   "mcpServers": {
     "entinel-technologies": {
       "type": "http",
-      "url": "https://mcp.entergram.com/mcp"
+      "url": "https://mcp.entergram.com/mcp",
+      "placement": "server"
     }
   }
 }
