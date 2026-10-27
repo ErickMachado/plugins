@@ -103,7 +103,7 @@ Work through 10 sections, asking the user for any critical finding that needs a 
 
 ## Offer Transition
 
-Ask the user: "Ship this brief?" — "Yes, ship now" → run `/hamster:ship {slug}`; "No, just planning" → end.
+Ask the user: "Ship this brief?" — "Yes, ship now" → run `/ship {slug}`; "No, just planning" → end.
 
 ---
 

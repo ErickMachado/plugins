@@ -166,4 +166,4 @@ After resolving all critical findings:
 - Safe to run repeatedly as you iterate on fixes
 - Focus on the diff, not pre-existing issues in unchanged code
 - Findings are specific (file:line) and actionable (concrete fix suggestions)
-- Run this before `/hamster:ship` to catch issues early, or independently on any feature branch
+- Run this before `/ship` to catch issues early, or independently on any feature branch

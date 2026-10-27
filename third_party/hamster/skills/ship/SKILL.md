@@ -111,5 +111,5 @@ Read [execution-loop](references/execution-loop.md) and follow it for every wave
 ## Notes
 
 - One commit set per parent (subtasks are never committed individually)
-- Interrupted? `/hamster:resume-hamster` reconstructs state from git + task statuses
+- Interrupted? `/resume-hamster` reconstructs state from git + task statuses
 - Single PR per brief by default; >15 tasks → ask about splitting

@@ -5,7 +5,7 @@ description: Resume an interrupted brief execution. Reconstruct progress from gi
 
 # Resume Brief Execution
 
-Resumes an interrupted `/hamster:ship` session. Reconstructs state from task statuses, git log, and git status — no state file needed. Like `/hamster:ship`, this is execution-only: it continues the pre-generated plan in `.hamster/` and never replans.
+Resumes an interrupted `/ship` session. Reconstructs state from task statuses, git log, and git status — no state file needed. Like `/ship`, this is execution-only: it continues the pre-generated plan in `.hamster/` and never replans.
 
 **Argument**: "$ARGUMENTS"
 
@@ -62,7 +62,7 @@ Resolution order:
 1. **Argument provided** → run **Brief Selection → If argument provided** in [brief-selection](references/brief-selection.md) and use its resolved `$slug`. If selection asks, wait for the user's answer; do not fall through to the signals below. With no argument, use steps 2–4 instead of that reference's no-argument picker.
 2. **Branch matches** `feature/{key}-{n}-{slug}` (`{key}` is the tasks' display ID key, lowercased, e.g. `ham`, `acme`) → extract the slug
 3. **One brief** has in_progress tasks → use it; **multiple** → ask the user
-4. **None** → tell the user nothing to resume; suggest `/hamster:ship`
+4. **None** → tell the user nothing to resume; suggest `/ship`
 
 ---
 
