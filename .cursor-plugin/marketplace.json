@@ -652,6 +652,11 @@
       "name": "servicenow",
       "source": "third_party/servicenow",
       "description": "Call the tools your admin publishes on a ServiceNow instance."
+    },
+    {
+      "name": "scale4-ai",
+      "source": "third_party/scale4-ai",
+      "description": "Look up and update Scale4 CRM leads, review conversations, and access users, products, and CRM reports."
     }
   ]
 }
