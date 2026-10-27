@@ -647,6 +647,11 @@
       "name": "ringcentral-chat",
       "source": "third_party/ringcentral-chat",
       "description": "Read team chats and posts, send messages, and manage teams, tasks, and notes."
+    },
+    {
+      "name": "asana",
+      "source": "third_party/asana",
+      "description": "Create, search, and update tasks, projects, and portfolios."
     }
   ]
 }
