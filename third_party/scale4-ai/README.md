@@ -19,7 +19,8 @@ Or run `/add-plugin scale4-ai` in chat.
   "mcpServers": {
     "scale4-ai": {
       "type": "http",
-      "url": "https://mcp.scale4.app/mcp_scale4_plugin"
+      "url": "https://mcp.scale4.app/mcp_scale4_plugin",
+      "placement": "server"
     }
   }
 }
