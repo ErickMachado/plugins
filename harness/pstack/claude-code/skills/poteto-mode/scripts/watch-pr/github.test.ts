@@ -39,6 +39,12 @@ describe("Actions workflow runs", () => {
         workflow_runs: [
           {
             id: 1,
+            workflow_id: 200,
+            run_number: 1,
+            event: "pull_request",
+            head_repository: { id: 300 },
+            head_branch: "feature",
+            pull_requests: [],
             run_attempt: 1,
             name: "CI",
             head_sha: "head",
@@ -48,6 +54,12 @@ describe("Actions workflow runs", () => {
           },
           {
             id: 2,
+            workflow_id: 200,
+            run_number: 2,
+            event: "pull_request",
+            head_repository: { id: 300 },
+            head_branch: "feature",
+            pull_requests: [],
             run_attempt: 1,
             name: "CI",
             head_sha: "old",
@@ -72,6 +84,12 @@ describe("Actions workflow runs", () => {
           total_count: 1,
           workflow_runs: [{
             id: 1,
+            workflow_id: 200,
+            run_number: 1,
+            event: "pull_request",
+            head_repository: { id: 300 },
+            head_branch: "feature",
+            pull_requests: [],
             run_attempt: 1,
             name: "Code Review Gate",
             head_sha: "head",

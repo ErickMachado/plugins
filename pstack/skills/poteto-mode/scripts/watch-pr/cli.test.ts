@@ -186,9 +186,9 @@ else if (args[0] === "api" && args.includes("graphql")) {
   if (process.env.STATUS === "error") process.exit(1);
   const status = process.env.STATUS || "queued";
   const page = args.find(arg => arg.startsWith("page="));
-  const run = (id, attempt, conclusion) => ({ id, run_attempt: attempt, name: "CI", head_sha: head, status: conclusion ? "completed" : status, conclusion, html_url: "" });
+  const run = (id, attempt, conclusion) => ({ id, workflow_id: id, run_number: id, event: "push", head_repository: { id: 300 }, head_branch: "feature", pull_requests: [], run_attempt: attempt, name: "CI", head_sha: head, status: conclusion ? "completed" : status, conclusion, html_url: "" });
   value = status === "paged"
-    ? { total_count: 101, workflow_runs: page === "page=2" ? [run(1, 2, "failure")] : Array.from({ length: 100 }, (_, i) => run(i + 1, 1, "success")) }
+    ? { total_count: 101, workflow_runs: page === "page=2" ? [run(101, 2, "failure")] : Array.from({ length: 100 }, (_, i) => run(i + 1, 1, "success")) }
     : { total_count: status === "none" ? 0 : 1, workflow_runs: status === "none" ? [] : [run(1, 1, status === "success" ? "success" : null)] };
 } else process.exit(2);
 console.log(JSON.stringify(value));
