@@ -455,6 +455,69 @@ function graphqlArgs(
   ];
 }
 
+export function parseWorkflowRunPage(
+  value: unknown,
+  head: string
+): {
+  readonly checks: readonly (T.Check & {
+    readonly id: number;
+    readonly attempt: number;
+  })[];
+  readonly count: number;
+  readonly total: number;
+} {
+  const page = record(value, "workflow runs");
+  const total = page.total_count;
+  if (!Number.isSafeInteger(total) || Number(total) < 0)
+    missing("workflow runs.total_count", total);
+  const runs = list(page.workflow_runs, "workflow runs.workflow_runs");
+  const checks = runs
+    .map((value, index) => {
+      const run = record(value, `workflow runs[${index}]`);
+      const id = run.id;
+      const attempt = run.run_attempt;
+      if (!Number.isSafeInteger(id) || Number(id) <= 0)
+        missing("workflow run.id", id);
+      if (!Number.isSafeInteger(attempt) || Number(attempt) <= 0)
+        missing("workflow run.run_attempt", attempt);
+      const sha = string(run.head_sha, "workflow run.head_sha");
+      const name = string(run.name, "workflow run.name");
+      const link = string(run.html_url, "workflow run.html_url");
+      const status = enumValue(
+        run.status,
+        [
+          "queued",
+          "in_progress",
+          "waiting",
+          "pending",
+          "requested",
+          "completed",
+        ] as const,
+        "workflow run.status"
+      );
+      const conclusion = optionalString(
+        run.conclusion,
+        "workflow run.conclusion"
+      );
+      if (sha !== head) return null;
+      const details = { name, link, description: "", workflow: name };
+      const reportedState = conclusion?.toUpperCase() ?? status.toUpperCase();
+      const check: T.Check =
+        status !== "completed" || conclusion === null
+          ? gateOr("pending", details, reportedState)
+          : conclusion === "success"
+            ? { ...details, kind: "passed", reportedState }
+            : conclusion === "skipped" || conclusion === "neutral"
+              ? { ...details, kind: "skipped", reportedState }
+              : conclusion === "action_required"
+                ? gateOr("failed", details, reportedState)
+                : { ...details, kind: "failed", reportedState };
+      return { ...check, id: Number(id), attempt: Number(attempt) };
+    })
+    .filter((check): check is NonNullable<typeof check> => check !== null);
+  return { checks, count: runs.length, total: Number(total) };
+}
+
 export class GhGitHubReader implements T.GitHubReader {
   async originRepo(): Promise<T.Repository | null> {
     const result = await run(["git", "remote", "get-url", "origin"]);
@@ -575,6 +638,43 @@ export class GhGitHubReader implements T.GitHubReader {
       "contexts.pageInfo.endCursor"
     );
     return { checks, endCursor: page.hasNextPage && cursor ? cursor : null };
+  }
+  async workflowRuns(
+    context: T.PrContext,
+    head: string
+  ): Promise<readonly T.Check[]> {
+    const latest = new Map<
+      number,
+      T.Check & { readonly id: number; readonly attempt: number }
+    >();
+    let seen = 0;
+    for (let page = 1; ; page++) {
+      const result = parseWorkflowRunPage(
+        await runJson([
+          "gh",
+          "api",
+          "-X",
+          "GET",
+          `repos/${context.owner}/${context.repo}/actions/runs`,
+          "-f",
+          `head_sha=${head}`,
+          "-F",
+          "per_page=100",
+          "-F",
+          `page=${page}`,
+        ]),
+        head
+      );
+      seen += result.count;
+      for (const check of result.checks) {
+        const previous = latest.get(check.id);
+        if (previous === undefined || previous.attempt < check.attempt)
+          latest.set(check.id, check);
+      }
+      if (seen >= result.total)
+        return [...latest.values()].map(({ id, attempt, ...check }) => check);
+      if (result.count === 0) missing("workflow runs pagination");
+    }
   }
   async reviewThreadPage(
     context: T.PrContext,
