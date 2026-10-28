@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LitSource">
+  <rect width="64" height="64" rx="14" fill="#F5F5F7"/>
+  <g transform="translate(8,8) scale(1.5)">
+    <path d="M6 8C6 6.895 6.895 6 8 6h6c1.105 0 2 .895 2 2v8c0 1.105-.895 2-2 2h-4l-2 4v-4H6V8z" fill="#0071e3"/>
+    <path d="M18 8c0-1.105.895-2 2-2h6c1.105 0 2 .895 2 2v8c0 1.105-.895 2-2 2h-2v4l-2-4h-2c-1.105 0-2-.895-2-2V8z" fill="#0071e3"/>
+    <circle cx="22" cy="22" r="6" stroke="#FF9500" stroke-width="2.5" fill="none"/>
+    <path d="M26.5 26.5L30 30" stroke="#FF9500" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+</svg>
