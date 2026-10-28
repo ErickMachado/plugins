@@ -19,7 +19,7 @@ Or run `/add-plugin dead-brands-llc` in chat.
   "mcpServers": {
     "dead-brands-llc": {
       "type": "http",
-      "url": "https://mcp.deadbrands.co"
+      "url": "https://mcp.deadbrands.co/arena/mcp"
     }
   }
 }
