@@ -671,7 +671,7 @@
     {
       "name": "synerixis",
       "source": "third_party/synerixis",
-      "description": "Work a cross-border AI customer service inbox: pending AI replies, order context, drafts, confirm-to-send, assignment, and quota."
+      "description": "Cross-border AI customer service desk for Shopify, Shoplazza, and email in one unified inbox. Check pending AI replies, pull order context, edit drafts, confirm-to-send, assign threads, and track quota. Writes are audited."
     }
   ]
 }
