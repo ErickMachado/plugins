@@ -19,7 +19,8 @@ Or run `/add-plugin faceless` in chat.
   "mcpServers": {
     "faceless": {
       "type": "http",
-      "url": "https://faceless.so/api/v1/mcp"
+      "url": "https://faceless.so/api/v1/mcp",
+      "placement": "server"
     }
   }
 }
