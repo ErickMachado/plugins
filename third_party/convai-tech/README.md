@@ -25,6 +25,7 @@ Or run `/add-plugin convai-agent-authoring` in chat.
     "convai": {
       "type": "http",
       "url": "https://mcp-api.convai.com/mcp",
+      "placement": "server",
       "auth": {
         "CLIENT_ID": "grok-bot",
         "scopes": [
