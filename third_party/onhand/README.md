@@ -21,7 +21,8 @@ Or run `/add-plugin onhand` in chat.
   "mcpServers": {
     "onhand": {
       "type": "http",
-      "url": "https://mcp.askonhand.com/mcp/grok"
+      "url": "https://mcp.askonhand.com/mcp/grok",
+      "placement": "server"
     }
   }
 }
