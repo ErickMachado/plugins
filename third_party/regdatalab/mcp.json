@@ -2,7 +2,10 @@
   "mcpServers": {
     "regdatalab": {
       "type": "http",
-      "url": "https://www.regdatalab.com/mcp"
+      "url": "https://www.regdatalab.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${REGDATALAB_API_KEY}"
+      }
     }
   }
 }

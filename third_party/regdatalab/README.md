@@ -8,7 +8,7 @@ Search FDA facilities, inspections, recalls, warning letters, 510(k)s, and drug 
 
 1. Open **Cursor Settings → Plugins**.
 2. Search for **RegDataLab**.
-3. Click **Install**, then complete the RegDataLab sign-in prompt.
+3. Click **Install**, then set your RegDataLab API key (below).
 
 Or run `/add-plugin regdatalab` in chat.
 
@@ -19,13 +19,18 @@ Or run `/add-plugin regdatalab` in chat.
   "mcpServers": {
     "regdatalab": {
       "type": "http",
-      "url": "https://www.regdatalab.com/mcp"
+      "url": "https://www.regdatalab.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${REGDATALAB_API_KEY}"
+      }
     }
   }
 }
 ```
 
-Auth is OAuth: when the plugin connects, sign in and paste your RegDataLab API key on the RegDataLab consent page to approve read-only access. Clients without OAuth can send `Authorization: Bearer YOUR_API_KEY` instead. Never put an API key in the URL.
+Auth is a RegDataLab **API key** sent as a bearer token. Create an account at https://www.regdatalab.com and copy a key from your dashboard, then set it in **Dashboard → Plugins → Configure**. Do not commit the key. Never put an API key in the URL.
+
+RegDataLab documents OAuth (paste the key on a consent page) for claude.ai and ChatGPT. This plugin follows the Cursor and Grok path: `Authorization: Bearer`.
 
 ## Before you connect
 

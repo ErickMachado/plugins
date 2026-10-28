@@ -31,5 +31,18 @@
     "life sciences",
     "mcp"
   ],
+  "variables": {
+    "type": "object",
+    "properties": {
+      "REGDATALAB_API_KEY": {
+        "type": "string",
+        "title": "RegDataLab API key",
+        "description": "API key from your RegDataLab dashboard (https://www.regdatalab.com)."
+      }
+    },
+    "required": [
+      "REGDATALAB_API_KEY"
+    ]
+  },
   "mcpServers": "./mcp.json"
 }
