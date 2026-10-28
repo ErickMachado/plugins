@@ -46,15 +46,19 @@ Wait. Then run `voltjuice next` again.
 
 `next` is `account`. The address did not load. Re-read it from the page and save it again. Do not ask them to debug.
 
-`next` is `cap`. One question, nothing else:
+`next` is `cap`. Stay in practice. Do not run `voltjuice mode live` yet. Follow `skills/levels/SKILL.md`: send the order they described on the default paper route, and tell them it was not sent to the market. If they have not described an order, ask once what to practice, then send that paper order. One practice order is enough. Do not save a routine on this step.
+
+After that practice order, one question, nothing else:
 
 "What is the most USDC one live order may use? The minimum is 11. A number is enough."
 
 When they name a number from 11 to 100000, run `voltjuice mode live --cap` with that number. Do not pick a cap yourself.
 
-`next` is `trade`. Do not invent an order. Follow `skills/intent/SKILL.md`. If they already described a buy or a 24-hour strategy, use that. Otherwise ask once:
+`next` is `trade`. This step is one confirmed live order. Do not invent an order. Do not follow the always-on path in `skills/intent/SKILL.md`, and do not save a routine, until this live order has succeeded. If they already described a buy or a strategy, use that description for this one order. Otherwise ask once:
 
-"Do you want one order now, or a strategy that keeps running after you close the phone? Describe the trade in your own words."
+"Describe the one trade in your own words."
+
+Repeat the order in one sentence: market, side, size, order type, and cap. Send it only after that sentence. If they only asked what would happen, stay on practice.
 
 Then:
 
@@ -73,8 +77,8 @@ Retry the same order once. Do not ask them to read an error.
 
 ## After the first live order
 
-One offer, not a setup quiz:
+Only after that live order has succeeded. One offer, not a setup quiz:
 
 "I can keep running after you close the phone. Each order will stay inside your cap."
 
-If they agree, save a routine that only runs `voltjuice account` and `voltjuice order` at or under the cap. The routine text must not contain the key. Pause by running `voltjuice mode paper` or by turning the routine off.
+If they agree, follow `skills/intent/SKILL.md` for the plan and `skills/routine/SKILL.md` to save it. Save a routine that only runs `voltjuice account` and `voltjuice order` at or under the cap. The routine text must not contain the key. Pause by running `voltjuice mode paper` or by turning the routine off.

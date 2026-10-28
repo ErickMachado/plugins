@@ -46,4 +46,4 @@ Then one question only:
 
 "Cross margin, 3x, a market order, take-profit about 8 percent, stop about 4 percent. If that position is already open, I will not add. Do you want a different leverage, or shall we use this?"
 
-A number from 1 to 20 replaces only the leverage. Any other change replaces only that one piece. When they accept, save the routine from the routine skill. Repeat the finished plan in plain language before the first live run.
+A number from 1 to 20 replaces only the leverage. Any other change replaces only that one piece. When they accept, do not save a routine until one live order has succeeded. Follow `skills/levels/SKILL.md`: one practice order, then one confirmed live order, and only then the routine. After that live order has succeeded, save the routine from the routine skill. Repeat the finished plan in plain language before the first live run.
