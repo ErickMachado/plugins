@@ -19,7 +19,8 @@ Or run `/add-plugin quackle` in chat.
   "mcpServers": {
     "quackle": {
       "type": "http",
-      "url": "https://mcp.quackle.io/"
+      "url": "https://mcp.quackle.io/",
+      "placement": "server"
     }
   }
 }
