@@ -32,7 +32,7 @@ The hosted runtime is the source of truth for tool names and schemas.
 - ScriptMasterLabs: https://scriptmasterlabs.com
 - Server URL: https://calibration-court.onrender.com/mcp
 
-The manifest logo points at ScriptMasterLabs' hosted icon (`https://scriptmasterlabs.com/apple-touch-icon.png`). The icon could not be downloaded when this plugin was added, so no local copy is committed yet.
+Logo is ScriptMasterLabs' `apple-touch-icon.png` from the scriptmasterlabs.com source repository. scriptmasterlabs.com could not be reached when this plugin was added, so the file was not downloaded from the website.
 
 ## License
 
