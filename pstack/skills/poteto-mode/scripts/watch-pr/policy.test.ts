@@ -91,6 +91,41 @@ describe("readiness truth table", () => {
   });
 });
 
+describe("workflow startup", () => {
+  it("holds a clean partial check list while a workflow is queued or running", async () => {
+    for (const state of ["queued", "in_progress"]) {
+      const reader = fakeReader({ workflowStatus: state, facts: { mergeStateStatus: "UNSTABLE" } });
+      const snapshot = await readSnapshot({ reader, context: context(1), pendingHistory: "omit", allowDraft: false });
+      expect(snapshot.kind).toBe("open");
+      if (snapshot.kind !== "open") throw new Error("expected open snapshot");
+      expect(snapshot.ci.kind).toBe("ci-pending");
+      expect(classifyPr(snapshot).kind).toBe("waiting");
+    }
+  });
+
+  it("allows completed successful workflows, blocks failures, and preserves external CI", async () => {
+    for (const [status, expected] of [["success", "ci-clean"], ["failure", "ci-failing"], ["none", "ci-clean"]] as const) {
+      const snapshot = await readSnapshot({ reader: fakeReader({ workflowStatus: status }), context: context(1), pendingHistory: "omit", allowDraft: false });
+      expect(snapshot.kind).toBe("open");
+      if (snapshot.kind !== "open") throw new Error("expected open snapshot");
+      expect(snapshot.ci.kind).toBe(expected);
+    }
+  });
+
+  it("does not use an old head or a changed head as clean workflow evidence", async () => {
+    const old = await readSnapshot({ reader: fakeReader({ workflowStatus: "queued", workflowHead: "old" }), context: context(1), pendingHistory: "omit", allowDraft: false });
+    expect(old.kind).toBe("open");
+    if (old.kind !== "open") throw new Error("expected open snapshot");
+    expect(old.ci.kind).toBe("ci-clean");
+    await expect(readSnapshot({ reader: fakeReader({ facts: { headRefOid: null } }), context: context(1), pendingHistory: "omit", allowDraft: false })).rejects.toBeInstanceOf(WatcherQueryError);
+    await expect(readSnapshot({ reader: fakeReader({ changedHead: "new" }), context: context(1), pendingHistory: "omit", allowDraft: false })).rejects.toBeInstanceOf(WatcherQueryError);
+  });
+
+  it("fails closed on a workflow query error", async () => {
+    await expect(readSnapshot({ reader: fakeReader({ workflowError: true }), context: context(1), pendingHistory: "omit", allowDraft: false })).rejects.toBeInstanceOf(WatcherQueryError);
+  });
+});
+
 describe("snapshot query planning", () => {
   it("does not query commit rollups while queued checks are pending", async () => {
     const reader = fakeReader({
