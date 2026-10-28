@@ -2,7 +2,8 @@
   "mcpServers": {
     "delivra": {
       "type": "http",
-      "url": "https://integration.delivra.com/mcp"
+      "url": "https://integration.delivra.com/mcp",
+      "placement": "server"
     }
   }
 }
